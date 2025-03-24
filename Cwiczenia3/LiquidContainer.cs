@@ -14,14 +14,15 @@ public class LiquidContainer : Container, IHazardNotifier
         double limit = IsHazardous ? MaxLoad * 0.5 : MaxLoad * 0.9;
         if (CurrentLoad + weight > limit)
         {
+            Console.WriteLine();
             NotifyHazard("Próba przeładowania niebezpiecznego ładunku!");
-            throw new Exception("OverfillException: Przekroczono limit dla ładunku niebezpiecznego!");
+            throw new Exception("Przekroczono limit dla ładunku niebezpiecznego!");
         }
         base.Load(weight);
     }
 
     public void NotifyHazard(string message)
     {
-        Console.WriteLine($"[HAZARD] {SerialNumber}: {message}");
+        Console.WriteLine($"[WARNING!] {SerialNumber}: {message}");
     }
 }

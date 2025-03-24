@@ -13,9 +13,10 @@ public class GasContainer : Container, IHazardNotifier
     {
         CurrentLoad *= 0.05;
     }
-    
+
     public void NotifyHazard(string message)
     {
-        Console.WriteLine($"[HAZARD] {SerialNumber}: {message}");
+        Console.WriteLine();
+        Console.WriteLine($"[WARNING!] {SerialNumber}: {message}");
     }
 }
